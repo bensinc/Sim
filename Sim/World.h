@@ -9,12 +9,14 @@
 #import "Program.h"
 
 @interface World : NSObject {
-    id world[100][100];
+    int world[100][100];
     NSMutableArray *programs;
 }
 
 @property (nonatomic, retain) NSMutableArray *programs;
 
 -(void)generateWorld;
+
+-(int)objectAtX:(int)x Y:(int)y;
 
 @end

@@ -58,8 +58,12 @@
     glViewport(0, 0, baseRect.size.width, baseRect.size.height);
     glMatrixMode(GL_PROJECTION);
     
+
+    
     glLoadIdentity();
-    gluPerspective(60.0, baseRect.size.width/baseRect.size.height, 0.2, 7);        
+    gluPerspective(60.0, baseRect.size.width/baseRect.size.height, 0.2, 27);    
+    
+
 }
 
 -(void)awakeFromNib {
@@ -103,9 +107,30 @@
 
         for (Program *p in world.programs) {
             NSLog(@"Program at: %i, %i", p.x, p.y);
-            glTranslatef(p.x/10.0 * 1.0, p.y/10.0 * 1.0, 0);
+            glTranslatef(p.x/100.0 * 1.0, p.y/100.0 * 1.0, 0);
             
-            glutSolidSphere(0.1, 10, 10);
+            
+            glMatrixMode(GL_COLOR);
+            
+            glColor3d(100.0, 100.0, 100.0);
+            
+            glMatrixMode(GL_MODELVIEW);
+
+//            glutSolidSphere(0.1, 10, 10);
+            
+            glutSolidCube(0.1);            
+
+            
+        }
+        
+        for (int x = 0; x < 100; x++) {
+            for (int y = 0; y < 100; y++) {
+                if ([world objectAtX:x Y:y] == 1) {
+                    NSLog(@"Resource at: %i, %i", x, y);
+                    glTranslatef(x/100.0, y/100.0, 0);
+                    glutSolidSphere(0.1, 10, 10);
+                }
+            }
         }
         
         glEndList();                
