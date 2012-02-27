@@ -3,7 +3,6 @@
 //  Sim
 //
 //  Created by Ben Sinclair on 2/27/12.
-//  Copyright (c) 2012 Industrial Parker, LLC. All rights reserved.
 //
 
 #import "GLWorldView.h"
@@ -104,6 +103,10 @@
 //        
 //        glTranslatef(0, 0, 0.6);
 //        glutSolidTorus(0.3, 1.8, 35, 31);
+        
+        
+
+
 
         for (Program *p in world.programs) {
             NSLog(@"Program at: %i, %i", p.x, p.y);
@@ -123,15 +126,30 @@
             
         }
         
-        for (int x = 0; x < 100; x++) {
-            for (int y = 0; y < 100; y++) {
-                if ([world objectAtX:x Y:y] == 1) {
-                    NSLog(@"Resource at: %i, %i", x, y);
-                    glTranslatef(x/100.0, y/100.0, 0);
-                    glutSolidSphere(0.1, 10, 10);
-                }
-            }
-        }
+//        for (int x = 0; x < 100; x++) {
+//            for (int y = 0; y < 100; y++) {
+//                if ([world objectAtX:x Y:y] == 1) {
+//                    glTranslatef(x/100.0, y/100.0, 0);
+//                    glutSolidSphere(0.1, 10, 10);
+//                }
+//            }
+//        }
+        
+
+
+        glTranslatef(0, 0, 0);
+        glColor4f(0.0f,1.0f,0.0f,0.6f);        
+        glutSolidSphere(0.1, 10, 10);        
+        
+        glTranslatef(1, 1, 0);
+        glColor4f(0.0f,1.0f,0.0f,0.6f);        
+        glutSolidSphere(0.1, 10, 10);        
+        
+        glTranslatef(-1, -1, 0);
+        glColor4f(0.0f,1.0f,0.0f,0.6f);        
+        glutSolidSphere(0.1, 10, 10);        
+        
+        
         
         glEndList();                
     } else {
