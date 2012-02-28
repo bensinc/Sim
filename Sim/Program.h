@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Instruction.h"
+
 
 @interface Program : NSObject {
     NSString *name;
@@ -33,5 +33,16 @@
 
 -(NSString*)generateInstruction:(BOOL)allowIf;
 -(void)generateProgram;
+
+
+-(int)getValue:(NSString*)v;
+
+-(void)move:(NSString*)v;
+-(void)useEnergy;
+
+-(void)add:(NSString*)r;
+-(void)sub:(NSString*)r;
+
+
 
 @end

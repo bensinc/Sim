@@ -19,4 +19,6 @@
 
 -(int)objectAtX:(int)x Y:(int)y;
 
+-(void)runCycle;
+
 @end

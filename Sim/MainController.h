@@ -9,13 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "Program.h"
 #import "World.h"
-#import "GLWorldView.h"
+#import "WorldView.h"
 
 @interface MainController : NSObject {
     IBOutlet NSTextView *logTextView;
-    IBOutlet GLWorldView *glWorldView;
+    IBOutlet WorldView *worldView;
     
     World *world;
+    BOOL running;
 }
 
 @end

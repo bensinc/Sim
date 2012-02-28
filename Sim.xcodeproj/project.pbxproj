@@ -12,8 +12,8 @@
 		B5603A0314FC156D00CC72DA /* Instruction.m in Sources */ = {isa = PBXBuildFile; fileRef = B5603A0214FC156D00CC72DA /* Instruction.m */; };
 		B5603A0614FC303100CC72DA /* World.m in Sources */ = {isa = PBXBuildFile; fileRef = B5603A0514FC303100CC72DA /* World.m */; };
 		B5603A0814FC36C900CC72DA /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5603A0714FC36C900CC72DA /* GLUT.framework */; };
-		B5603A0B14FC370B00CC72DA /* GLWorldView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5603A0A14FC370A00CC72DA /* GLWorldView.m */; };
 		B5603A0D14FC3D1B00CC72DA /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5603A0C14FC3D1B00CC72DA /* OpenGL.framework */; };
+		B5603A1014FD328100CC72DA /* WorldView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5603A0F14FD328100CC72DA /* WorldView.m */; };
 		B59CB43F14FBF00F00525920 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59CB43E14FBF00F00525920 /* Cocoa.framework */; };
 		B59CB44914FBF00F00525920 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B59CB44714FBF00F00525920 /* InfoPlist.strings */; };
 		B59CB44B14FBF00F00525920 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B59CB44A14FBF00F00525920 /* main.m */; };
@@ -32,9 +32,9 @@
 		B5603A0414FC303100CC72DA /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = World.h; sourceTree = "<group>"; };
 		B5603A0514FC303100CC72DA /* World.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = World.m; sourceTree = "<group>"; };
 		B5603A0714FC36C900CC72DA /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
-		B5603A0914FC370A00CC72DA /* GLWorldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLWorldView.h; sourceTree = "<group>"; };
-		B5603A0A14FC370A00CC72DA /* GLWorldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLWorldView.m; sourceTree = "<group>"; };
 		B5603A0C14FC3D1B00CC72DA /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		B5603A0E14FD328100CC72DA /* WorldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldView.h; sourceTree = "<group>"; };
+		B5603A0F14FD328100CC72DA /* WorldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldView.m; sourceTree = "<group>"; };
 		B59CB43A14FBF00F00525920 /* Sim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59CB43E14FBF00F00525920 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B59CB44114FBF00F00525920 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -125,8 +125,8 @@
 				B59CB44514FBF00F00525920 /* Supporting Files */,
 				B56039F914FC100A00CC72DA /* MainController.h */,
 				B56039FA14FC100A00CC72DA /* MainController.m */,
-				B5603A0914FC370A00CC72DA /* GLWorldView.h */,
-				B5603A0A14FC370A00CC72DA /* GLWorldView.m */,
+				B5603A0E14FD328100CC72DA /* WorldView.h */,
+				B5603A0F14FD328100CC72DA /* WorldView.m */,
 			);
 			path = Sim;
 			sourceTree = "<group>";
@@ -213,7 +213,7 @@
 				B5603A0014FC149200CC72DA /* Program.m in Sources */,
 				B5603A0314FC156D00CC72DA /* Instruction.m in Sources */,
 				B5603A0614FC303100CC72DA /* World.m in Sources */,
-				B5603A0B14FC370B00CC72DA /* GLWorldView.m in Sources */,
+				B5603A1014FD328100CC72DA /* WorldView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

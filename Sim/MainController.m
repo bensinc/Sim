@@ -31,11 +31,23 @@
     world = [[World alloc] init];
     [world generateWorld];
     
-    glWorldView.world = world;
-    NSLog(@"VIEW: %@", glWorldView);
+    worldView.world = world;
+
+    running = YES;    
     
- 
-    
+    [NSThread detachNewThreadSelector:@selector(runWorld) toTarget:self withObject:nil];
+
+
+}
+
+-(void)runWorld {
+    while(running) {
+        NSLog(@"Cycle");        
+        [world runCycle];
+        [worldView setNeedsDisplay:YES];
+        sleep(1);
+
+    }
 }
 
 @end
