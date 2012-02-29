@@ -17,8 +17,8 @@
     NSMutableArray *code;    
 }
 
-@property (nonatomic, retain) NSMutableArray *code;
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, strong) NSMutableArray *code;
+@property (nonatomic, strong) NSString *name;
 @property (nonatomic, assign) int age;
 @property (nonatomic, assign) int resources;
 @property (nonatomic, assign) int a;

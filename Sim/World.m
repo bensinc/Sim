@@ -11,11 +11,13 @@
 
 @implementation World
 
-@synthesize programs;
+@synthesize programs, newPrograms, programCount, resourceCount;
 
 -(void)generateWorld {
     programs = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 10; i++) {
+    [programs retain];
+    
+    for (int i = 0; i < programCount; i++) {
         Program *p = [[Program alloc] init];
         [p generateProgram];
         p.age = 0;
@@ -23,11 +25,12 @@
         p.resources = 100;
         p.x = arc4random() % 100;
         p.y = arc4random() % 100;
-        [programs addObject:p];   
-        NSLog(@"Adding program!");
+        [programs addObject:p];  
+        [p release];
+//        NSLog(@"Adding program!");
     }
     
-    for (int i = 0; i < 500; i++) {
+    for (int i = 0; i < resourceCount; i++) {
         world[arc4random() % 100][arc4random() % 100] = 1;
     }
     
@@ -37,6 +40,27 @@
     return(world[x][y]);
 }
 
+-(void)reproduce:(Program*)p with:(Program*)op {
+//    NSLog(@"Reproduce begin: %@ with %@", p.name, op.name);
+    Program *newP = [[Program alloc] init];
+    newP.code = [[NSMutableArray alloc] init];
+    newP.name = [NSString stringWithFormat:@"Program R%i", [self.programs count]+[self.newPrograms count]+1];
+    for (int i = 0; i < 10; i++) {
+        if ([[p.code objectAtIndex:i] isEqualToString:[op.code objectAtIndex:i]]) {
+            [newP.code addObject:[p.code objectAtIndex:i]];
+        } else {
+            [newP.code addObject:[newP generateInstruction:YES]];
+        }
+    }
+    
+    newP.x = arc4random() % 100;
+    newP.y = arc4random() % 100;    
+    
+    [self.newPrograms addObject:newP];
+    
+//    NSLog(@"New program: %@", newP.name);
+}
+
 
 -(void)runInstructionForProgram:(Program*)p chunks:(NSArray*)chunks {
     
@@ -44,12 +68,20 @@
     
     if([[chunks objectAtIndex:0] isEqualToString:@"move"]) {
         //                    NSLog(@"Move: %@", line);
-        [p useEnergy]; // Use 1 energy per move
+//        [p useEnergy]; // Use 1 energy per move
         [p move:[chunks objectAtIndex:1]];
+        
         if ([self objectAtX:p.x Y:p.y] == 1) {
-            NSLog(@"Ate energy");
             p.e = p.e + ENERGY_VALUE;
             world[p.x][p.y] = 0;
+        }
+        
+        for (Program *op in self.programs) {
+            if (op != p) {
+                if (op.x == p.x && op.y == p.y) {
+                    [self reproduce:p with:op];
+                }
+            }
         }
     }
     
@@ -88,8 +120,8 @@
             case 6:
                 y++;
             case 7:
-                x--;
-                y++;
+                x++;
+                y--;
             case 8:
                 y--;
                 
@@ -124,16 +156,19 @@
 
 
 -(void)runCycle {
+    self.newPrograms = [[NSMutableArray alloc] init];
+    
     for (Program *p in self.programs) {
         
         if (p.e > 0) {
             
             p.age = p.age+1;
+            [p useEnergy];
         
             for (NSString *line in p.code) {
                 NSArray *chunks = [line componentsSeparatedByString:@"|"];
                 
-                NSLog(@"%@", line);
+//                NSLog(@"%@", line);
                 
                 if([[chunks objectAtIndex:0] isEqualToString:@"if"]) {
                     NSArray *ifChunks = [line componentsSeparatedByString:@")"];
@@ -210,7 +245,7 @@
                         [self runInstructionForProgram:p chunks:chunks];
                 }
                 
-                NSLog(@"%@ (%i,%i): a:%i, b:%i, c:%i, d:%i e:%i", p.name, p.x, p.y, p.a, p.b, p.c, p.d, p.e);
+//                NSLog(@"%@ (%i,%i): a:%i, b:%i, c:%i, d:%i e:%i", p.name, p.x, p.y, p.a, p.b, p.c, p.d, p.e);
                 
             } // line in p.code
             
@@ -218,9 +253,21 @@
                 p.e = 0;
             
         } else { // p.e > 0
-            NSLog(@"%@ died at %i", p.name, p.age);
+//            NSLog(@"%@ died at %i", p.name, p.age);
         }
     }
+    
+//    NSLog(@"NEW PROGRAMS: %@", newPrograms);
+    for (Program *p in self.newPrograms) {
+        [programs addObject:p];
+    }
+    
+    for (int i = 0; i < [programs count]; i++) {
+        Program *p = [programs objectAtIndex:i];
+        if (p.e <= 0)
+            [programs removeObject:p];
+    }
+    
 }
 
 @end

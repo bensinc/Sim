@@ -11,8 +11,6 @@
 		B5603A0014FC149200CC72DA /* Program.m in Sources */ = {isa = PBXBuildFile; fileRef = B56039FF14FC149200CC72DA /* Program.m */; };
 		B5603A0314FC156D00CC72DA /* Instruction.m in Sources */ = {isa = PBXBuildFile; fileRef = B5603A0214FC156D00CC72DA /* Instruction.m */; };
 		B5603A0614FC303100CC72DA /* World.m in Sources */ = {isa = PBXBuildFile; fileRef = B5603A0514FC303100CC72DA /* World.m */; };
-		B5603A0814FC36C900CC72DA /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5603A0714FC36C900CC72DA /* GLUT.framework */; };
-		B5603A0D14FC3D1B00CC72DA /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5603A0C14FC3D1B00CC72DA /* OpenGL.framework */; };
 		B5603A1014FD328100CC72DA /* WorldView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5603A0F14FD328100CC72DA /* WorldView.m */; };
 		B59CB43F14FBF00F00525920 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59CB43E14FBF00F00525920 /* Cocoa.framework */; };
 		B59CB44914FBF00F00525920 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B59CB44714FBF00F00525920 /* InfoPlist.strings */; };
@@ -20,6 +18,15 @@
 		B59CB44F14FBF00F00525920 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B59CB44D14FBF00F00525920 /* Credits.rtf */; };
 		B59CB45214FBF00F00525920 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B59CB45114FBF00F00525920 /* AppDelegate.m */; };
 		B59CB45514FBF00F00525920 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59CB45314FBF00F00525920 /* MainMenu.xib */; };
+		B5EA3DFB14FD962C009507AF /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = B5EA3DF814FD962C009507AF /* pause.png */; };
+		B5EA3DFC14FD962C009507AF /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = B5EA3DF914FD962C009507AF /* play.png */; };
+		B5EA3DFD14FD962C009507AF /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = B5EA3DFA14FD962C009507AF /* plus.png */; };
+		B5EA3DFF14FD9635009507AF /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = B5EA3DFE14FD9635009507AF /* refresh.png */; };
+		B5EA3E0214FD9654009507AF /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = B5EA3E0014FD9654009507AF /* info.png */; };
+		B5EA3E0314FD9654009507AF /* minus white.png in Resources */ = {isa = PBXBuildFile; fileRef = B5EA3E0114FD9654009507AF /* minus white.png */; };
+		B5EA3E0514FD9687009507AF /* new doc.png in Resources */ = {isa = PBXBuildFile; fileRef = B5EA3E0414FD9687009507AF /* new doc.png */; };
+		B5EA3E0714FD9A0E009507AF /* GenerateSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5EA3E0614FD9A0E009507AF /* GenerateSheet.xib */; };
+		B5EA3E0A14FDAC23009507AF /* GenerateSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA3E0914FDAC23009507AF /* GenerateSheetController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +38,6 @@
 		B5603A0214FC156D00CC72DA /* Instruction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instruction.m; sourceTree = "<group>"; };
 		B5603A0414FC303100CC72DA /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = World.h; sourceTree = "<group>"; };
 		B5603A0514FC303100CC72DA /* World.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = World.m; sourceTree = "<group>"; };
-		B5603A0714FC36C900CC72DA /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
-		B5603A0C14FC3D1B00CC72DA /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		B5603A0E14FD328100CC72DA /* WorldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldView.h; sourceTree = "<group>"; };
 		B5603A0F14FD328100CC72DA /* WorldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldView.m; sourceTree = "<group>"; };
 		B59CB43A14FBF00F00525920 /* Sim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sim.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +53,16 @@
 		B59CB45014FBF00F00525920 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B59CB45114FBF00F00525920 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B59CB45414FBF00F00525920 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B5EA3DF814FD962C009507AF /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		B5EA3DF914FD962C009507AF /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		B5EA3DFA14FD962C009507AF /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		B5EA3DFE14FD9635009507AF /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		B5EA3E0014FD9654009507AF /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
+		B5EA3E0114FD9654009507AF /* minus white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minus white.png"; sourceTree = "<group>"; };
+		B5EA3E0414FD9687009507AF /* new doc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new doc.png"; sourceTree = "<group>"; };
+		B5EA3E0614FD9A0E009507AF /* GenerateSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GenerateSheet.xib; sourceTree = "<group>"; };
+		B5EA3E0814FDAC23009507AF /* GenerateSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenerateSheetController.h; sourceTree = "<group>"; };
+		B5EA3E0914FDAC23009507AF /* GenerateSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenerateSheetController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5603A0D14FC3D1B00CC72DA /* OpenGL.framework in Frameworks */,
-				B5603A0814FC36C900CC72DA /* GLUT.framework in Frameworks */,
 				B59CB43F14FBF00F00525920 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,8 +93,6 @@
 		B59CB42F14FBF00F00525920 = {
 			isa = PBXGroup;
 			children = (
-				B5603A0C14FC3D1B00CC72DA /* OpenGL.framework */,
-				B5603A0714FC36C900CC72DA /* GLUT.framework */,
 				B59CB44414FBF00F00525920 /* Sim */,
 				B59CB43D14FBF00F00525920 /* Frameworks */,
 				B59CB43B14FBF00F00525920 /* Products */,
@@ -118,6 +129,7 @@
 		B59CB44414FBF00F00525920 /* Sim */ = {
 			isa = PBXGroup;
 			children = (
+				B5EA3DF614FD961D009507AF /* Images */,
 				B56039FD14FC148200CC72DA /* Models */,
 				B59CB45014FBF00F00525920 /* AppDelegate.h */,
 				B59CB45114FBF00F00525920 /* AppDelegate.m */,
@@ -127,6 +139,9 @@
 				B56039FA14FC100A00CC72DA /* MainController.m */,
 				B5603A0E14FD328100CC72DA /* WorldView.h */,
 				B5603A0F14FD328100CC72DA /* WorldView.m */,
+				B5EA3E0614FD9A0E009507AF /* GenerateSheet.xib */,
+				B5EA3E0814FDAC23009507AF /* GenerateSheetController.h */,
+				B5EA3E0914FDAC23009507AF /* GenerateSheetController.m */,
 			);
 			path = Sim;
 			sourceTree = "<group>";
@@ -141,6 +156,20 @@
 				B59CB44D14FBF00F00525920 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5EA3DF614FD961D009507AF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B5EA3E0414FD9687009507AF /* new doc.png */,
+				B5EA3E0014FD9654009507AF /* info.png */,
+				B5EA3E0114FD9654009507AF /* minus white.png */,
+				B5EA3DF814FD962C009507AF /* pause.png */,
+				B5EA3DFE14FD9635009507AF /* refresh.png */,
+				B5EA3DF914FD962C009507AF /* play.png */,
+				B5EA3DFA14FD962C009507AF /* plus.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +226,14 @@
 				B59CB44914FBF00F00525920 /* InfoPlist.strings in Resources */,
 				B59CB44F14FBF00F00525920 /* Credits.rtf in Resources */,
 				B59CB45514FBF00F00525920 /* MainMenu.xib in Resources */,
+				B5EA3DFB14FD962C009507AF /* pause.png in Resources */,
+				B5EA3DFC14FD962C009507AF /* play.png in Resources */,
+				B5EA3DFD14FD962C009507AF /* plus.png in Resources */,
+				B5EA3DFF14FD9635009507AF /* refresh.png in Resources */,
+				B5EA3E0214FD9654009507AF /* info.png in Resources */,
+				B5EA3E0314FD9654009507AF /* minus white.png in Resources */,
+				B5EA3E0514FD9687009507AF /* new doc.png in Resources */,
+				B5EA3E0714FD9A0E009507AF /* GenerateSheet.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +251,7 @@
 				B5603A0314FC156D00CC72DA /* Instruction.m in Sources */,
 				B5603A0614FC303100CC72DA /* World.m in Sources */,
 				B5603A1014FD328100CC72DA /* WorldView.m in Sources */,
+				B5EA3E0A14FDAC23009507AF /* GenerateSheetController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +335,7 @@
 		B59CB45914FBF00F00525920 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sim/Sim-Prefix.pch";
 				INFOPLIST_FILE = "Sim/Sim-Info.plist";
@@ -308,6 +347,7 @@
 		B59CB45A14FBF00F00525920 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sim/Sim-Prefix.pch";
 				INFOPLIST_FILE = "Sim/Sim-Info.plist";

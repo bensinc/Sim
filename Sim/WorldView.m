@@ -61,7 +61,7 @@
     
     
     for (Program *p in world.programs) {
-        NSLog(@"Program: %@, e: %i", p.name, p.e);
+//        NSLog(@"Program: %@, e: %i", p.name, p.e);
         if (p.e > 0)
             CGContextSetRGBFillColor (myContext, 0, 0, 1, .5);// 5
         else

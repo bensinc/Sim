@@ -11,12 +11,26 @@
 #import "World.h"
 #import "WorldView.h"
 
-@interface MainController : NSObject {
+#import "GenerateSheetController.h"
+
+@interface MainController : NSObject <NSTableViewDataSource, NSTableViewDelegate> {
     IBOutlet NSTextView *logTextView;
     IBOutlet WorldView *worldView;
+    IBOutlet NSTableView *programsTable;
+    IBOutlet NSToolbarItem *runButton;
+    
+    NSWindow *generateSheet;
+    IBOutlet NSWindow *window;
+
     
     World *world;
     BOOL running;
+    
+    int sleepTime;
 }
+
+-(IBAction)generateClicked:(id)sender;
+-(IBAction)runClicked:(id)sender;
+-(IBAction)speedClicked:(id)sender;
 
 @end

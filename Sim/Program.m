@@ -206,8 +206,8 @@
         case 6:
             self.y++;
         case 7:
-            self.x--;
-            self.y++;
+            self.x++;
+            self.y--;
         case 8:
             self.y--;
             
