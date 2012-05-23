@@ -14,6 +14,7 @@
     int x, y;
     int resources;    
     int a, b, c, d, e; // Registers    
+    int programId;
     NSMutableArray *code;    
 }
 
@@ -29,6 +30,9 @@
 
 @property (nonatomic, assign) int x;
 @property (nonatomic, assign) int y;
+
+@property (nonatomic, assign) int programId;
+
 
 
 -(NSString*)generateInstruction:(BOOL)allowIf;

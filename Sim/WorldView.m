@@ -14,11 +14,12 @@
 
 @implementation WorldView
 
-@synthesize world;
+@synthesize world, selectedProgram;
 
 - (id)initWithFrame:(NSRect)frameRect
 {
     self = [super initWithFrame:frameRect];
+    selectedProgram = -1;
     return self;
 }
 
@@ -57,16 +58,32 @@
     CGContextStrokePath(myContext);    
 
     
-
+//    id object;
+//    CCARRAY_FOREACH(array, object)
+//    {
+//        [object doSomething];
+//    }
     
     
-    for (Program *p in world.programs) {
+//    for (Program *p in world.programs) {
+    Program* p;
+    
+    
+    CCARRAY_FOREACH(world.programs, p) {        
 //        NSLog(@"Program: %@, e: %i", p.name, p.e);
-        if (p.e > 0)
-            CGContextSetRGBFillColor (myContext, 0, 0, 1, .5);// 5
-        else
-            CGContextSetRGBFillColor (myContext, 1, 0, 0.5, .5);// 5
-        CGContextFillRect (myContext, CGRectMake (p.x * PROGRAM_SIZE, p.y * PROGRAM_SIZE, PROGRAM_SIZE, PROGRAM_SIZE));
+//            NSLog(@"P: %@", p);
+        if (p) {
+            if (p.programId == selectedProgram) {
+                CGContextSetRGBFillColor (myContext, 0, 1, 0, .9);// 5
+            } else if (p.e > 0) {
+                CGContextSetRGBFillColor (myContext, 0, 0, 1, .5);// 5
+            } else {
+                CGContextSetRGBFillColor (myContext, 1, 0, 0.5, .5);// 5
+            }
+            
+            CGContextFillRect (myContext, CGRectMake (p.x * PROGRAM_SIZE, p.y * PROGRAM_SIZE, PROGRAM_SIZE, PROGRAM_SIZE));
+        }
+
     }
     
     for (int x = 0; x < 100; x++) {

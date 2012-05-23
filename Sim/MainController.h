@@ -12,6 +12,7 @@
 #import "WorldView.h"
 
 #import "GenerateSheetController.h"
+#import "InspectorController.h"
 
 @interface MainController : NSObject <NSTableViewDataSource, NSTableViewDelegate> {
     IBOutlet NSTextView *logTextView;
@@ -20,6 +21,8 @@
     IBOutlet NSToolbarItem *runButton;
     
     NSWindow *generateSheet;
+    InspectorController *inspector;
+    
     IBOutlet NSWindow *window;
 
     
@@ -27,6 +30,8 @@
     BOOL running;
     
     int sleepTime;
+    
+    Program *selectedProgram;
 }
 
 -(IBAction)generateClicked:(id)sender;

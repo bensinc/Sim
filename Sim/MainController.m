@@ -59,6 +59,19 @@
 }
 
 
+-(void)inspect {
+
+    if (!inspector)
+        inspector = [[InspectorController alloc] initWithWindowNibName:@"Inspector"];
+    
+    inspector.program = selectedProgram;
+    [inspector showWindow:window];
+    [inspector updateDisplay];
+    
+    
+}
+
+
 - (void)showCustomSheet: (NSWindow *)win
 
 // User has asked to see the custom display. Display it.
@@ -101,7 +114,6 @@
         world = [[World alloc] init];
         world.programCount = ((GenerateSheetController*)contextInfo).programCount;
         world.resourceCount = ((GenerateSheetController*)contextInfo).resourceCount;
-        [world retain];
     
         [world generateWorld];    
         worldView.world = world;    
@@ -142,6 +154,7 @@
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
     return [world.programs count];
+//    return 0;
 }
 
 - (id)tableView:(NSTableView *)tableView
@@ -171,6 +184,12 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
     for (NSString *line in p.code) {
         [[[logTextView textStorage] mutableString] appendString: [NSString stringWithFormat:@"%@\n", line]];        
     }
+    running = NO;
+    worldView.selectedProgram = p.programId;
+    selectedProgram = p;
+    [worldView setNeedsDisplay:YES];
+    
+    [self inspect];
     
 
 }

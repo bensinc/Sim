@@ -7,21 +7,32 @@
 
 #import <Foundation/Foundation.h>
 #import "Program.h"
+#import "CCArray.h"
 
 @interface World : NSObject {
     int world[100][100];
-    NSMutableArray *programs;
-    NSMutableArray *newPrograms;    
+    id programsArray[1000];
+    
+    int freeSpot;
+    int programsSize;
+    
+    CCArray *programs;
+    CCArray *newPrograms;
+    
     int programCount;
     int resourceCount;
 }
 
-@property (nonatomic, strong) NSMutableArray *programs;
-@property (nonatomic, strong) NSMutableArray *newPrograms;
+@property (nonatomic, strong) CCArray *programs;
+@property (nonatomic, strong) CCArray *newPrograms;
 
 
 @property (nonatomic, assign) int programCount;
 @property (nonatomic, assign) int resourceCount;
+
+@property (nonatomic, assign) int programsSize;
+@property (nonatomic, assign) id programsArray;
+
 
 -(void)generateWorld;
 
@@ -30,5 +41,7 @@
 -(void)runCycle;
 
 -(void)reproduce:(Program*)p with:(Program*)op;
+
+-(Program*)getProgram:(int)i;
 
 @end

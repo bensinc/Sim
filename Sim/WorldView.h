@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "World.h"
+#import "CCArray.h"
 
 @interface WorldView : NSView {
     World *world;
+    int selectedProgram;
 }
 
 @property (nonatomic, retain) World *world;
+@property (nonatomic, assign) int selectedProgram;
 
 @end

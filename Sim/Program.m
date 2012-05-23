@@ -21,7 +21,7 @@
 
 @implementation Program
 
-@synthesize name, code, x, y, age, resources, a, b, c, d, e;
+@synthesize name, code, x, y, age, resources, a, b, c, d, e, programId;
 
 
 -(id)init {
@@ -229,6 +229,8 @@
 }
 
 
-
+-(void)dealloc {
+    NSLog(@"PROGRAM DEALLOCD!");
+}
 
 @end
