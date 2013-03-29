@@ -19,7 +19,7 @@
     
     for (int i = 0; i < programCount; i++)
     {
-        [programs addObject:[[Program alloc] init:i withCode:YES]];
+        [programs addObject:[[Program alloc] init:i]];
     }
     
     programsSize = programCount;
@@ -45,13 +45,12 @@
 
 -(void)reproduce:(Program*)p with:(Program*)op
 {
-    Program *newP = [[Program alloc] init:programCount++ withCode:NO];
-    
+    Program *newP = [[Program alloc] init:programCount++];    
     for (int i = 0; i < 10; i++) {
-        if ([[p.code objectAtIndex:i] isEqualToString:[op.code objectAtIndex:i]]) {
-            [newP.code addObject:[p.code objectAtIndex:i]];
-        } else {
-            [newP.code addObject:[newP generateInstruction:YES]];
+        id object = [p.code objectAtIndex:i];
+        if ([object isEqualToString:[op.code objectAtIndex:i]])
+        {
+            [newP.code replaceObjectAtIndex:i withObject:object];
         }
     }   
     [newPrograms addObject:newP];
@@ -60,20 +59,31 @@
 
 -(void)runInstructionForProgram:(Program*)p chunks:(NSArray*)chunks
 {
+    int px = p.x;
+    int py = p.y;
+    
     if([[chunks objectAtIndex:0] isEqualToString:@"move"])
     {
         [p move:[chunks objectAtIndex:1]];
-        
-        if ([self objectAtX:p.x Y:p.y] == 1) {
+
+        if ([self objectAtX:px Y:py] == 1) {
             p.e = p.e + ENERGY_VALUE;
-            world[p.x][p.y] = 0;
+            world[px][py] = 0;
         }
         
         for (Program *op in programs)
         {
-            if (op && op != p && op.e > 0) {
-                if (op.x == p.x && op.y == p.y) {                        
-                    [self reproduce:p with:op];
+            if (op.x == px)
+            {
+                if (op.y == py)
+                {
+                    if (op != p)
+                    {
+                        if (op.e > 0)
+                        {
+                            [self reproduce:p with:op];
+                        }
+                    }
                 }
             }
         }        
@@ -82,10 +92,10 @@
     
     if([[chunks objectAtIndex:0] isEqualToString:@"deposit"])
     {
-        if ([self objectAtX:p.x Y:p.y] == 0)
+        if ([self objectAtX:px Y:py] == 0)
         {
             p.e = p.e - ENERGY_VALUE;
-            world[p.x][p.y] = 1;                 
+            world[px][py] = 1;                 
         }
     }                
     
@@ -93,8 +103,8 @@
     {
         int v = [p getValue:[chunks objectAtIndex:1]];
         
-        int x = p.x;
-        int y = p.y;
+        int x = px;
+        int y = py;
         
         switch(v)
         {

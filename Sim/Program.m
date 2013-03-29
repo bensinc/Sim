@@ -24,7 +24,7 @@
 @synthesize name, code, x, y, age, resources, a, b, c, d, e, programId;
 
 
--(id)init:(int)value withCode:(BOOL)wc
+-(id)init:(int)value
 {    
     if (self = [super init])
     {
@@ -35,10 +35,8 @@
         self.e = 30;
         self.age = 0;
         
-        if (wc)
-        {
-            [self generateProgram];
-        }
+
+        [self generateProgram];
         
         self.name = [NSString stringWithFormat:@"Program %i", value];
         self.resources = 100;

@@ -33,7 +33,7 @@
 
 @property (nonatomic, assign) int programId;
 
--(id)init:(int)value withCode:(BOOL)wc;
+-(id)init:(int)value;
 
 -(NSString*)generateInstruction:(BOOL)allowIf;
 -(void)generateProgram;
