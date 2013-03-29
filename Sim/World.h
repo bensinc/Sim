@@ -7,7 +7,6 @@
 
 #import <Foundation/Foundation.h>
 #import "Program.h"
-#import "CCArray.h"
 
 @interface World : NSObject {
     int world[100][100];
@@ -16,14 +15,14 @@
     int freeSpot;
     int programsSize;
     
-    CCArray *programs;
-    CCArray *newPrograms;
+    NSMutableArray *programs;
+    NSMutableArray *newPrograms;
     
     int programCount;
     int resourceCount;
 }
 
-@property (nonatomic, strong) CCArray *programs;
+@property (nonatomic, strong) NSArray *programs;
 
 @property (nonatomic, assign) int programCount;
 @property (nonatomic, assign) int resourceCount;

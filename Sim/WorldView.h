@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "World.h"
-#import "CCArray.h"
 
 @interface WorldView : NSView {
     World *world;

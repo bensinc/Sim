@@ -15,7 +15,7 @@
 
 -(void)generateWorld
 {
-    programs = [[CCArray arrayWithCapacity:1000] retain];
+    programs = [[NSMutableArray arrayWithCapacity:1] retain];
     
     for (int i = 0; i < programCount; i++)
     {
@@ -69,8 +69,8 @@
             world[p.x][p.y] = 0;
         }
         
-        Program* op;
-        CCARRAY_FOREACH(programs, op) {              
+        for (Program *op in programs)
+        {
             if (op && op != p && op.e > 0) {
                 if (op.x == p.x && op.y == p.y) {                        
                     [self reproduce:p with:op];
@@ -162,9 +162,8 @@
 
 
 -(void)runCycle {
-    newPrograms = [[CCArray arrayWithCapacity:300] retain];
-    Program* p;
-    CCARRAY_FOREACH(programs, p)
+    newPrograms = [[NSMutableArray arrayWithCapacity:1] retain];
+    for (Program *p in programs)
     {
         if (p && p.e > 0)
         {
@@ -238,19 +237,14 @@
         }
     }
     
-    for (Program *p in newPrograms)
+    for (Program *p in programs)
     {
-        [programs addObject:p];
-    }
-
-    
-    CCARRAY_FOREACH(programs, p)
-    {
-        if (p && p.e <= 0)
+        if (p && p.e > 0)
         {
-            [programs removeObject:p];
+            [newPrograms addObject:p];
         }
     }
+    programs = newPrograms;
 }
 
 @end

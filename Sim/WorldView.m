@@ -53,13 +53,11 @@
         CGContextMoveToPoint(myContext, 0, y);
         CGContextAddLineToPoint(myContext, self.frame.size.width, y);
     }    
-    
-    
-    CGContextStrokePath(myContext);    
-    Program* p;
-    
-    
-    CCARRAY_FOREACH(world.programs, p) {        
+
+    CGContextStrokePath(myContext);
+        
+    for (Program *p in world.programs)
+    {
         if (p) {
             if (p.programId == selectedProgram) {
                 CGContextSetRGBFillColor (myContext, 0, 1, 0, .9);// 5

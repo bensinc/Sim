@@ -27,7 +27,6 @@
 		B5EA3E0514FD9687009507AF /* new doc.png in Resources */ = {isa = PBXBuildFile; fileRef = B5EA3E0414FD9687009507AF /* new doc.png */; };
 		B5EA3E0714FD9A0E009507AF /* GenerateSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5EA3E0614FD9A0E009507AF /* GenerateSheet.xib */; };
 		B5EA3E0A14FDAC23009507AF /* GenerateSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EA3E0914FDAC23009507AF /* GenerateSheetController.m */; };
-		B5FEA0C214FEC1D500444EC0 /* CCArray.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FEA0C014FEC1D500444EC0 /* CCArray.m */; };
 		B5FEA0C414FECDFB00444EC0 /* Inspector.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5FEA0C314FECDFB00444EC0 /* Inspector.xib */; };
 		B5FEA0C714FECFDA00444EC0 /* InspectorController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FEA0C614FECFDA00444EC0 /* InspectorController.m */; };
 /* End PBXBuildFile section */
@@ -66,9 +65,6 @@
 		B5EA3E0614FD9A0E009507AF /* GenerateSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GenerateSheet.xib; sourceTree = "<group>"; };
 		B5EA3E0814FDAC23009507AF /* GenerateSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenerateSheetController.h; sourceTree = "<group>"; };
 		B5EA3E0914FDAC23009507AF /* GenerateSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenerateSheetController.m; sourceTree = "<group>"; };
-		B5FEA0BF14FEC1D500444EC0 /* CCArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCArray.h; sourceTree = "<group>"; };
-		B5FEA0C014FEC1D500444EC0 /* CCArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCArray.m; sourceTree = "<group>"; };
-		B5FEA0C114FEC1D500444EC0 /* ccCArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccCArray.h; sourceTree = "<group>"; };
 		B5FEA0C314FECDFB00444EC0 /* Inspector.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Inspector.xib; sourceTree = "<group>"; };
 		B5FEA0C514FECFDA00444EC0 /* InspectorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectorController.h; sourceTree = "<group>"; };
 		B5FEA0C614FECFDA00444EC0 /* InspectorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectorController.m; sourceTree = "<group>"; };
@@ -161,9 +157,6 @@
 		B59CB44514FBF00F00525920 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B5FEA0BF14FEC1D500444EC0 /* CCArray.h */,
-				B5FEA0C014FEC1D500444EC0 /* CCArray.m */,
-				B5FEA0C114FEC1D500444EC0 /* ccCArray.h */,
 				B59CB44614FBF00F00525920 /* Sim-Info.plist */,
 				B59CB44714FBF00F00525920 /* InfoPlist.strings */,
 				B59CB44A14FBF00F00525920 /* main.m */,
@@ -268,7 +261,6 @@
 				B5603A0614FC303100CC72DA /* World.m in Sources */,
 				B5603A1014FD328100CC72DA /* WorldView.m in Sources */,
 				B5EA3E0A14FDAC23009507AF /* GenerateSheetController.m in Sources */,
-				B5FEA0C214FEC1D500444EC0 /* CCArray.m in Sources */,
 				B5FEA0C714FECFDA00444EC0 /* InspectorController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
