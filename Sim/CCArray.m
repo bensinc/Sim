@@ -114,7 +114,7 @@
 {
 	if( index >= data->num )
 		[NSException raise:NSRangeException
-					format: @"index out of range in objectAtIndex(%d)", data->num ];
+					format: @"index out of range in objectAtIndex(%ld)", (unsigned long)data->num ];
 	
 	return data->arr[index];
 }

@@ -56,22 +56,10 @@
     
     
     CGContextStrokePath(myContext);    
-
-    
-//    id object;
-//    CCARRAY_FOREACH(array, object)
-//    {
-//        [object doSomething];
-//    }
-    
-    
-//    for (Program *p in world.programs) {
     Program* p;
     
     
     CCARRAY_FOREACH(world.programs, p) {        
-//        NSLog(@"Program: %@, e: %i", p.name, p.e);
-//            NSLog(@"P: %@", p);
         if (p) {
             if (p.programId == selectedProgram) {
                 CGContextSetRGBFillColor (myContext, 0, 1, 0, .9);// 5

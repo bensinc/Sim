@@ -24,15 +24,11 @@
 }
 
 @property (nonatomic, strong) CCArray *programs;
-@property (nonatomic, strong) CCArray *newPrograms;
-
 
 @property (nonatomic, assign) int programCount;
 @property (nonatomic, assign) int resourceCount;
 
 @property (nonatomic, assign) int programsSize;
-@property (nonatomic, assign) id programsArray;
-
 
 -(void)generateWorld;
 
