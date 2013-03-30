@@ -175,7 +175,7 @@
     newPrograms = [[NSMutableArray arrayWithCapacity:1] retain];
     for (Program *p in programs)
     {
-        if (p && p.e > 0)
+        if (p.e > 0)
         {
             p.age = p.age+1;
             [p useEnergy];
@@ -249,7 +249,7 @@
     
     for (Program *p in programs)
     {
-        if (p && p.e > 0)
+        if (p.e > 0)
         {
             [newPrograms addObject:p];
         }
