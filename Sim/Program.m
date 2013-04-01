@@ -24,9 +24,8 @@
 @synthesize name, code, x, y, age, resources, a, b, c, d, e, programId;
 
 
--(id)init {
-
-    
+-(id)init:(int)value
+{    
     if (self = [super init])
     {
         self.a = 0;
@@ -35,12 +34,17 @@
         self.d = 0;
         self.e = 30;
         self.age = 0;
-        self.x = 0;
-        self.y = 0;
+        
+
+        [self generateProgram];
+        
+        self.name = [NSString stringWithFormat:@"Program %i", value];
+        self.resources = 100;
+        self.x = arc4random() % 100;
+        self.y = arc4random() % 100;
+        self.programId = value;
     }
-    return self;    
-    
-    
+    return self;
 }
 
 -(NSString*)generateParameter:(NSString*)kind {
@@ -186,9 +190,6 @@
 }
 
 -(void)move:(NSString*)v {
-    
-    
-//    NSLog(@"MOVE: %@", v);
     switch([self getValue:v]) {
         case 1:
             self.x--;
@@ -224,13 +225,12 @@
     
     if (self.y < 0)
         self.y = 100;
-    
-    
 }
 
 
 -(void)dealloc {
     NSLog(@"PROGRAM DEALLOCD!");
+    [super dealloc];
 }
 
 @end

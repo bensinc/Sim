@@ -24,54 +24,18 @@
 }
 
 - (void)drawRect:(NSRect)rect
-{
-//    NSLog(@"Drawrect");
-    CGContextRef myContext = [[NSGraphicsContext // 1
-                               currentContext] graphicsPort];
+{    
+    //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul), ^{
     
-    // ********** Your drawing code here ********** // 2
-//    CGContextSetRGBFillColor (myContext, 1, 0, 0, 1);// 3
-//    CGContextFillRect (myContext, CGRectMake (0, 0, 200, 100 ));// 4
-//    
-//    CGContextSetRGBFillColor (myContext, 0, 0, 1, .5);// 5
-//    CGContextFillRect (myContext, CGRectMake (0, 0, 100, 200));// 6
+    CGContextRef myContext = [[NSGraphicsContext currentContext] graphicsPort];
     
     CGContextSetRGBFillColor (myContext, 0, 0, 0, .5);// 5
     CGContextFillRect (myContext, CGRectMake (0, 0, self.frame.size.width, self.frame.size.height));    
-    
-    
-    CGContextSetLineWidth(myContext, 0.1);
-    CGContextSetStrokeColorWithColor(myContext, CGColorCreateGenericRGB(0.0, 0.0, 0.0, 1.0));
 
+    /* Removed stroked grid that took a vast amount of time for limited benefit */
     
-    for (int x = 0; x < self.frame.size.width; x+= PROGRAM_SIZE) {
-            CGContextMoveToPoint(myContext, x, 0);
-            CGContextAddLineToPoint(myContext, x, self.frame.size.height);
-    }
-    
-    for (int y = 0; y < self.frame.size.height; y+= PROGRAM_SIZE) {
-        CGContextMoveToPoint(myContext, 0, y);
-        CGContextAddLineToPoint(myContext, self.frame.size.width, y);
-    }    
-    
-    
-    CGContextStrokePath(myContext);    
-
-    
-//    id object;
-//    CCARRAY_FOREACH(array, object)
-//    {
-//        [object doSomething];
-//    }
-    
-    
-//    for (Program *p in world.programs) {
-    Program* p;
-    
-    
-    CCARRAY_FOREACH(world.programs, p) {        
-//        NSLog(@"Program: %@, e: %i", p.name, p.e);
-//            NSLog(@"P: %@", p);
+    for (Program *p in world.programs)
+    {
         if (p) {
             if (p.programId == selectedProgram) {
                 CGContextSetRGBFillColor (myContext, 0, 1, 0, .9);// 5
@@ -94,6 +58,8 @@
             }             
         }
     }
+        
+    //});
 }
 
 @end
